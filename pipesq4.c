@@ -1,5 +1,8 @@
+//*** To communicate a file from Process P1 to P2 using Pipes and print length of strings starting with letter m ***//
+
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
 #include <sys/types.h>
 
 #define SIZE 64
@@ -21,13 +24,18 @@ printf("Child\n");
 close(pfd[1]);
 read(pfd[0], buff, SIZE);
 printf("Child: Got the string: %s\n", buff);
+printf("Length of string %d", sizeof(char), strlen(buff));
 close(pfd[0]);
 }
+
 else
 {
 printf("Parent\n");
 close(pfd[0]);
-read(pfd[1], "Memory\n", 10);
+FILE *rd;
+sprintf(buff, "Man made machine");
+rd=popen("wc -c", "w");
+read(pfd[1], "Man made machine\n", 17);
 close(pfd[1]);
 }
 }
