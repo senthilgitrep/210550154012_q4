@@ -27,7 +27,7 @@ else
 {
 printf("Parent\n");
 close(pfd[0]);
-read(pfd[1], "Memory\n" , 5);
+read(pfd[1], "Memory\n", 10);
 close(pfd[1]);
 }
 }

@@ -1,0 +1,15 @@
+//*** To open file from process P1 into P2 and find strings starting with letter m and print their length ***//
+
+* Create Pipes usinf pipe file descriptors 
+* Get pipe id
+* Call fork function to create Parent - Child
+* Now check the id, if its 0, its new that is child (P2)
+* Close writing end in child using pfd[1]
+* Read the data from process P1 (Parent)
+* print the data from the shared directory
+* Calculate the length of the string using strlen function and print it
+* Close the reading end pfd[0]
+* Now if id not zero, print as Parent
+* Close the reading end in parent pfd[0]
+* Write the data and provide the directory link
+* Close the writing end using pfd[1]
