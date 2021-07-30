@@ -32,9 +32,7 @@ else
 {
 printf("Parent\n");
 close(pfd[0]);
-FILE *rd;
-sprintf(buff, "Man made machine");
-rd=popen("wc -c", "w");
+printf(buff, "Man made machine");
 read(pfd[1], "Man made machine\n", 17);
 close(pfd[1]);
 }
